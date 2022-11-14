@@ -9,6 +9,7 @@ public class LoginTest {
 	@Test (priority = 1)
 	public void successfulLogin() {
 		System.getProperty("webdriver.chrome.driver", "C:/Users/AlexanderReyes/git/maconomy/maconomy/src/test/java/maconomy/maconomy/Utilities/Drivers/chrome106/chromedriver.exe");
+		//creation of object chromedriver
 		WebDriver webDriver = new ChromeDriver();
 		
 		webDriver.get("http://10.4.8.157:20019");
