@@ -1,0 +1,7 @@
+v1 readme
+this do not have page object modelling yet
+directly setting up web driver and exposed finding elements in test page
+
+but it connects to jenkins already (check the pom.xml as well)
+uses before/ test/ after annotations
+uses firefox and chromedriver located within utilities
