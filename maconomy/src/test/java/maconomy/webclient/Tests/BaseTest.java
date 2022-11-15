@@ -14,12 +14,12 @@ public class BaseTest {
 	
 	@BeforeClass (description = "creation of web driver object")
 	public void BeforeClass() {
-		//System.setProperty("webdriver.chrome.driver", "C:/Users/AlexanderReyes/git/maconomy/maconomy/src/test/java/maconomy/maconomy/Utilities/Drivers/chromedriver107/chromedriver.exe");
-		System.setProperty("webdriver.gecko.driver", "C:/Users/AlexanderReyes/git/maconomy/maconomy/src/test/java/maconomy/maconomy/Utilities/Drivers/geckodriver-v0.31.0-win64/geckodriver.exe");
+		System.setProperty("webdriver.chrome.driver", "C:/Users/AlexanderReyes/git/maconomy/maconomy/src/test/java/maconomy/maconomy/Utilities/Drivers/chromedriver107/chromedriver.exe");
+		//System.setProperty("webdriver.gecko.driver", "C:/Users/AlexanderReyes/git/maconomy/maconomy/src/test/java/maconomy/maconomy/Utilities/Drivers/geckodriver-v0.31.0-win64/geckodriver.exe");
 		
 		//creation of object chromedriver
-		//webDriver = new ChromeDriver();
-		webDriver = new FirefoxDriver();
+		webDriver = new ChromeDriver();
+		//webDriver = new FirefoxDriver();
 	}
 	
 	@AfterClass

@@ -11,17 +11,26 @@ public class LoginTest extends BaseTest{
 		String URL = null;
 		URL = System.getProperty("WebClientURL");
 		if (URL == null) {
-			URL = "http://10.4.8.157:20019";
+			URL = "https://www.google.com"; //"http://10.4.8.157:20019";
 		}
-		//System.out.println("from jenkins: " + System.getProperty("WebClientURL"));
+		String userName = System.getProperty("Username");
+		String password = System.getProperty("Password");
+		
 		//http://10.4.8.157:20019
 		webDriver.get(URL);
-		
+		System.out.println("Launched URL: " + URL);
+		/*
+		 * try { Thread.sleep(20); } catch (InterruptedException e) { // TODO
+		 * Auto-generated catch block e.printStackTrace(); }
+		 */
 		WebElement userNameTextBox = webDriver.findElement(By.id("username"));
-		userNameTextBox.sendKeys(System.getProperty("Username"));
+		userNameTextBox.sendKeys(userName);
+		System.out.println("set username: " + userName);
 		WebElement passwordTextBox = webDriver.findElement(By.id("password"));
-		passwordTextBox.sendKeys(System.getProperty("Password"));
+		passwordTextBox.sendKeys(password);
+		System.out.println("set password: " + password);
 		WebElement loginButton = webDriver.findElement(By.id("login"));
 		loginButton.click();
+		System.out.println("clicked login button");
 	}
 }
