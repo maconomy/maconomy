@@ -39,4 +39,17 @@ public class BasePage {
 		
 	}
 	
+	public void verifyExists(By ElementBy) {
+		
+	}
+	
+	public boolean checkIfElementExists(By ElementBy) {
+		waitVisibility(ElementBy);
+		if (webDriver.findElement(ElementBy) == null) {
+			return false;
+		} else {
+			return true;
+		}
+		
+	}
 }

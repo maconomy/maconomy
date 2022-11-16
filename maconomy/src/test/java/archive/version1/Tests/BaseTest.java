@@ -20,6 +20,16 @@ public class BaseTest {
 		//creation of object chromedriver
 		webDriver = new ChromeDriver();
 		//webDriver = new FirefoxDriver();
+		
+		String URL;
+		URL = "http://10.4.8.157:20019"; //System.getProperty("WebClientURL");
+		if (URL == null) {
+			System.out.println("no URL fetched from jenkins.");
+		}
+		
+		//http://10.4.8.157:20019
+		webDriver.get(URL);
+		System.out.println("Launched URL: " + URL);
 	}
 	
 	@AfterClass

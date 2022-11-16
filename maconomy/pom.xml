@@ -57,13 +57,14 @@
 					<version>2.22.1</version>
 					<configuration>
 						<systemPropertyVariables>
-							
+							<!-- 
 							<JenkinParamWebClientURL>${WebClientURL}</JenkinParamWebClientURL>
 							<JenkinParamUsername>${Username}</JenkinParamUsername>
 							<JenkinParamPassword>${Password}</JenkinParamPassword>
+							-->
 						</systemPropertyVariables>
 						<suiteXmlFiles>
-							<suiteXmlFile>testng.xml</suiteXmlFile>
+							<suiteXmlFile>sanity.xml</suiteXmlFile>
 						</suiteXmlFiles>
 					</configuration>
 				</plugin>
