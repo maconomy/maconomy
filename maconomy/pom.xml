@@ -57,11 +57,12 @@
 					<version>2.22.1</version>
 					<configuration>
 						<systemPropertyVariables>
-							<!-- 
+							
 							<JenkinParamWebClientURL>${WebClientURL}</JenkinParamWebClientURL>
 							<JenkinParamUsername>${Username}</JenkinParamUsername>
 							<JenkinParamPassword>${Password}</JenkinParamPassword>
-							-->
+							<JenkinParamBrowser>${Browser}</JenkinParamBrowser>
+							
 						</systemPropertyVariables>
 						<suiteXmlFiles>
 							<suiteXmlFile>sanity.xml</suiteXmlFile>

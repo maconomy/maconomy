@@ -1,5 +1,7 @@
 package webclient.Pages;
 
+import static org.testng.Assert.fail;
+
 import java.time.Duration;
 
 import org.openqa.selenium.By;
@@ -7,6 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 public class BasePage {
 
@@ -33,13 +36,24 @@ public class BasePage {
 		webDriver.findElement(elementBy).sendKeys(text);
 	}
 	
-	public String getText(By ElementBy) {
-		waitVisibility(ElementBy);
-		return webDriver.findElement(ElementBy).getText();
+	public String getText(By elementBy) {
+		waitVisibility(elementBy);
+		return webDriver.findElement(elementBy).getText();
 		
 	}
 	
-	public void verifyExists(By ElementBy) {
+	public void verifyExists(By elementBy) {
+		
+	}
+	
+	public void verifyTextContains(By elementBy, String text) {
+		waitVisibility(elementBy);
+		if (getText(elementBy).contains(text) == true) {
+			System.out.println("Match found");
+		} else {
+			System.out.println("Match not found");
+			Assert.assertFalse(true);
+		}
 		
 	}
 	
@@ -53,3 +67,4 @@ public class BasePage {
 		
 	}
 }
+ 

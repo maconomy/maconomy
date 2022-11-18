@@ -24,4 +24,11 @@ public class LoginTest extends BaseTest {
 		mainPage.closeMenu();
 
 	}
+	
+	@Test(priority = 2)
+	public void verifyLoginPage() {
+		LoginPage loginPage = new LoginPage(webDriver);
+		
+		loginPage.verifyTextContains(loginPage.usernameLabel, "user");
+	}
 }
