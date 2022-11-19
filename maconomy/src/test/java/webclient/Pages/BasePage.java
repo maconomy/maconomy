@@ -1,15 +1,14 @@
 package webclient.Pages;
 
-import static org.testng.Assert.fail;
-
 import java.time.Duration;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+
+import net.bytebuddy.dynamic.TypeResolutionStrategy.Passive;
 
 public class BasePage {
 
@@ -53,6 +52,7 @@ public class BasePage {
 		} else {
 			System.out.println("Match not found");
 			Assert.assertFalse(true);
+			
 		}
 		
 	}
@@ -66,5 +66,7 @@ public class BasePage {
 		}
 		
 	}
+	
+	
 }
  

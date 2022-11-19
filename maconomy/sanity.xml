@@ -1,8 +1,11 @@
-<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
-<suite name="sanity suite" >
-   <test name="browser testing" >
-       <classes> 
-          <class name="webclient.Tests.LoginTest" />
-       </classes>
-   </test>
- </suite>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="sanity suite" parallel="methods" thread-count="2">
+	<listeners>
+		<listener class-name="utilities.TestListenerStatus"></listener>
+	</listeners>
+	<test name="browser testing">
+		<classes>
+			<class name="webclient.Tests.LoginTest" />
+		</classes>
+	</test>
+</suite>

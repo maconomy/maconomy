@@ -15,6 +15,7 @@ public class MainPage extends BasePage{
 	By sideBar = By.xpath("//dm-tree");
 	
 	public void openMenu() {
+		
 		if (checkIfElementExists(menuButton) == true) {
 			System.out.println("Menu already open");
 		} else {

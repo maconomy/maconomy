@@ -11,8 +11,8 @@ public class LoginPage extends BasePage{
 	}
 
 	//jenkin variables
-	public String username = System.getProperty("Username");
-	public String password = System.getProperty("Password");
+	public String username = "Administrator"; //System.getProperty("Username");
+	public String password = "123456"; //System.getProperty("Password");
 	//find elements
 	public By usernameLabel = By.xpath("//label[@for='username']");
 	public By passwordLabel = By.xpath("//label[@for='password']");
