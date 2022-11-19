@@ -1,10 +1,7 @@
 package webclient.Tests;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
-import archive.version1.Tests.BaseTest;
 import webclient.Pages.LoginPage;
 import webclient.Pages.MainPage;
 

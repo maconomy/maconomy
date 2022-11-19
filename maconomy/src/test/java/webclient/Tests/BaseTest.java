@@ -4,9 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeSuite;
 
 
 public class BaseTest {
@@ -19,17 +17,17 @@ public class BaseTest {
 		
 		String browser;
 		browser = System.getProperty("Browser");
-		if (System.getProperty("Browser") == "Chrome") {
+		if (browser == "Chrome") {
 			
 			System.setProperty("webdriver.chrome.driver", "C:/Users/AlexanderReyes/git/maconomy/maconomy/src/test/java/maconomy/maconomy/Utilities/Drivers/chromedriver107/chromedriver.exe");
 			webDriver = new ChromeDriver();
 			
-		} else if (System.getProperty("Browser") == "Firefox") {
+		} else if (browser == "Firefox") {
 			System.setProperty("webdriver.geckodriver.driver", "C:/Users/AlexanderReyes/git/maconomy/maconomy/src/test/java/maconomy/maconomy/Utilities/Drivers/geckodriver-v0.31.0-win64/geckodriver.exe");
 			
 			webDriver = new FirefoxDriver();
 				
-		} else if (System.getProperty("Browser") == "Edge") {
+		} else if (browser == "Edge") {
 			System.out.println("nothing is setup yet for edge");
 		}
 		
