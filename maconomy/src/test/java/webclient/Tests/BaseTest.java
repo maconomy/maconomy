@@ -6,6 +6,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
@@ -61,5 +62,10 @@ public class BaseTest {
 		
 		webDriver.close();
 		System.out.println("Closed Browser");
+	}
+	
+	@AfterTest
+	public void generateReport() {
+		
 	}
 }
