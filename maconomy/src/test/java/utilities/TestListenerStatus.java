@@ -31,5 +31,6 @@ public class TestListenerStatus extends TestUtils implements ITestListener{
 	
 	public void onSkip(ITestResult result) {
 		System.out.println("Test Skipped: " + result.getMethod().getMethodName());
+		
 	}
 }
