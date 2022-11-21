@@ -12,6 +12,7 @@ public class LoginTest extends BaseTest {
 
 	@Test(priority = 2)
 	public void successfulLogin() throws Exception {
+		fail();
 		LoginPage loginPage = new LoginPage(webDriver);
 		MainPage mainPage = new MainPage(webDriver);
 		
@@ -29,6 +30,7 @@ public class LoginTest extends BaseTest {
 	
 	@Test(priority = 1)
 	public void verifyLoginPage() throws Exception {
+		fail();
 		System.out.println("Start verifying login page");
 		LoginPage loginPage = new LoginPage(webDriver);
 		

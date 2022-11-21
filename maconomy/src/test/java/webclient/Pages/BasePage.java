@@ -9,11 +9,13 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import net.bytebuddy.dynamic.TypeResolutionStrategy.Passive;
+import webclient.utilities.Data;
 
 public class BasePage {
 
 	public WebDriver webDriver;
 	public WebDriverWait webDriverWait;
+
 	
 	public BasePage(WebDriver newWebDriver) {
 		// TODO Auto-generated constructor stub

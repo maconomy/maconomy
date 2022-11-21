@@ -3,16 +3,15 @@ package webclient.Pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class LoginPage extends BasePage{
+import webclient.utilities.Data;
 
+public class LoginPage extends BasePage{
+	public Data data = new Data();
 	public LoginPage(WebDriver webDriver) {
 		// TODO Auto-generated constructor stub
 		super(webDriver);
 	}
 
-	//jenkin variables
-	public String username = "Administrator"; //System.getProperty("Username");
-	public String password = "123456"; //System.getProperty("Password");
 	//find elements
 	public By usernameLabel = By.xpath("//label[@for='username']");
 	public By passwordLabel = By.xpath("//label[@for='password']");
@@ -22,10 +21,10 @@ public class LoginPage extends BasePage{
 	public By loginButton = By.id("login");
 	
 	public void login() {
-		setText(usernameTextBox, username);
-		System.out.println("set username: " + username);
-		setText(passwordTextBox, password);
-		System.out.println("set password: " + password);
+		setText(usernameTextBox, data.username);
+		System.out.println("set username: " + data.username);
+		setText(passwordTextBox, data.password);
+		System.out.println("set password: " + data.password);
 		click(loginButton);
 		System.out.println("clicked login button");
 		

@@ -1,5 +1,7 @@
 package webclient.Tests;
 
+import static org.testng.Assert.fail;
+
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -11,6 +13,7 @@ public class SettingsTest extends BaseTest {
 	
 	@Test (description = "Verify About Page")
 	public void verifyAboutPage() throws Exception {
+		fail();
 		LoginPage loginPage = new LoginPage(webDriver);
 		AboutPage aboutPage = new AboutPage(webDriver);
 		MainPage mainPage = new MainPage(webDriver);

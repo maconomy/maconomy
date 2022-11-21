@@ -9,15 +9,37 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Sanity Testing</th></tr>
-<tr><td><a href="#t0">Login</a></td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">58,037</td><td></td><td></td></tr>
-<tr class="stripe"><td><a href="#t1">Settings</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">36,933</td><td></td><td></td></tr>
-<tr><th>Total</th><th class="num">3</th><th class="num">0</th><th class="num">0</th><th class="num">0</th><th class="num">94,970</th><th colspan="2"></th></tr>
+<tr><td><a href="#t0">Login</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">2</td><td class="num">9,518</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Sanity Testing</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Login &#8212; passed</th></tr><tr class="passedeven"><td rowspan="2">webclient.Tests.LoginTest</td><td><a href="#m0">successfulLogin</a></td><td rowspan="1">1668899488550</td><td rowspan="1">8858</td></tr><tr class="passedeven"><td><a href="#m1">verifyLoginPage</a></td><td rowspan="1">1668899472335</td><td rowspan="1">151</td></tr></tbody>
-<tbody id="t1"><tr><th colspan="4">Settings &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">webclient.Tests.SettingsTest</td><td><a href="#m2">verifyAboutPage</a></td><td rowspan="1">1668899525194</td><td rowspan="1">9087</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Sanity Testing</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Login &#8212; failed (configuration methods)</th></tr><tr class="failedeven"><td rowspan="1">webclient.Tests.LoginTest</td><td><a href="#m0">afterTest</a></td><td rowspan="1">1668947018669</td><td rowspan="1">4</td></tr><tr><th colspan="4">Login &#8212; failed</th></tr><tr class="failedeven"><td rowspan="2">webclient.Tests.LoginTest</td><td><a href="#m1">successfulLogin</a></td><td rowspan="1">1668947018473</td><td rowspan="1">2</td></tr><tr class="failedeven"><td><a href="#m2">verifyLoginPage</a></td><td rowspan="1">1668947017984</td><td rowspan="1">14</td></tr></tbody>
 </table>
-<h2>Login</h2><h3 id="m0">webclient.Tests.LoginTest#successfulLogin</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">webclient.Tests.LoginTest#verifyLoginPage</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h2>Settings</h2><h3 id="m2">webclient.Tests.SettingsTest#verifyAboutPage</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Login</h2><h3 id="m0">webclient.Tests.LoginTest#afterTest</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>[TestResult name=successfulLogin status=FAILURE method=LoginTest.successfulLogin()[pri:2, instance:webclient.Tests.LoginTest@4d5650ae] output={null}]</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.NoSuchSessionException: invalid session id
+Build info: version: &apos;4.6.0&apos;, revision: &apos;79f1c02ae20&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.3&apos;
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Command: [87f8977e462c2b38ccf1958d690aba85, close {}]
+Capabilities {acceptInsecureCerts: false, browserName: msedge, browserVersion: 107.0.1418.52, ms:edgeOptions: {debuggerAddress: localhost:56247}, msedge: {msedgedriverVersion: 107.0.1418.52 (bd1735e913fc..., userDataDir: C:\Users\ALEXAN~1\AppData\L...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:56247/devtoo..., se:cdpVersion: 107.0.1418.52, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 87f8977e462c2b38ccf1958d690aba85
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:541)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:596)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:600)
+	at org.openqa.selenium.remote.RemoteWebDriver.close(RemoteWebDriver.java:432)
+	at webclient.Tests.BaseTest.afterTest(BaseTest.java:82)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 37 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">webclient.Tests.LoginTest#successfulLogin</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: null
+	at webclient.Tests.LoginTest.successfulLogin(LoginTest.java:15)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 29 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">webclient.Tests.LoginTest#verifyLoginPage</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: null
+	at webclient.Tests.LoginTest.verifyLoginPage(LoginTest.java:33)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 29 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>
