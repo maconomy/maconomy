@@ -69,16 +69,16 @@
 					<version>2.22.1</version>
 					<configuration>
 						<systemPropertyVariables>
-							<!-- <JenkinParamBrowser>${Browser}</JenkinParamBrowser>						
+							<JenkinParamBrowser>${Browser}</JenkinParamBrowser>						
 							<JenkinParamWebClientURL>${WebClientURL}</JenkinParamWebClientURL>
 							<JenkinParamUsername>${Username}</JenkinParamUsername>
 							<JenkinParamPassword>${Password}</JenkinParamPassword>
 							<JenkinParamSuiteName>${SuiteName}</JenkinParamSuiteName>
 							
--->
+
 						</systemPropertyVariables>
 						<suiteXmlFiles>
-							<suiteXmlFile>sanity.xml</suiteXmlFile>
+							<suiteXmlFile>${SuiteName}.xml</suiteXmlFile>
 						</suiteXmlFiles>
 					</configuration>
 				</plugin>

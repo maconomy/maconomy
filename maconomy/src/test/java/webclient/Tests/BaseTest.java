@@ -3,7 +3,6 @@ package webclient.Tests;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
-import java.nio.charset.MalformedInputException;
 import java.time.LocalDateTime;
 
 import org.apache.commons.mail.DefaultAuthenticator;
@@ -31,31 +30,63 @@ public class BaseTest {
 	// this declaration will allow this driver to be used on pages that will extend
 	// this BaseTest class, but eventually we will not be calling webdrivers in our
 	// test pages, instead only methods from respective pages
-	public static WebDriver webDriver;
 	public Data data = new Data();
+	public static WebDriver webDriver;
+	
 
-	@BeforeTest(description = "creation of web driver object")
+	public int indexSI = 0;
+	
+	@BeforeMethod (description = "Creation of web driver object")
 	public void BeforeClass() {
-
+		System.out.println("from jenkins::::::" + data.browser + data.URL + data.chromeDriverLocation);
 		// creation of object web driver
-		try {
-			if (data.browser == "Chrome") {
-				System.setProperty("webdriver.chrome.driver", data.chromeDriverLocation);
-				webDriver = new ChromeDriver();
 
-			} else if (data.browser == "Firefox") {
-				System.setProperty("webdriver.gecko.driver", data.firefoxDriverLocation);
-				webDriver = new FirefoxDriver();
+		switch (data.browser) {
+		case "Chrome":
+			System.out.println("Selected Chrome Browser...");
+			System.setProperty("webdriver.chrome.driver", data.chromeDriverLocation);
+			webDriver = new ChromeDriver();
+			System.out.println("Instantiated Chrome driver...");
+			
+			break;
 
-			} else if (data.browser == "Edge") {
-				System.setProperty("webdriver.edge.driver", data.edgeDriverLocation);
-				webDriver = new EdgeDriver();
-			}
-			System.out.println("successful browser declaration");
-		} catch (Exception e) {
-			e.printStackTrace();
-			System.out.println("unsuccessful browser declaration");
+		case "Firefox":
+			System.out.println("Selected Firefox Browser...");
+			System.setProperty("webdriver.gecko.driver", data.firefoxDriverLocation);
+			webDriver = new FirefoxDriver();
+			System.out.println("Instantiated Firefox driver...");
+			
+		case "Edge":
+			System.out.println("Selected Edge Browser...");
+			System.setProperty("webdriver.edge.driver", data.edgeDriverLocation);
+			webDriver = new EdgeDriver();
+			System.out.println("Instantiated Edge driver...");
+			
+		default:
+			System.out.println("Browser driver instantiation Failed");
+			break;
 		}
+		/*
+		 * try { if (System.getProperty("Browser") == "Chrome") {
+		 * System.out.println("Selected Chrome Browser...");
+		 * System.setProperty("webdriver.chrome.driver",
+		 * "C:/Users/AlexanderReyes/git/maconomy/maconomy/src/test/java/maconomy/maconomy/Utilities/Drivers/chromedriver107/chromedriver.exe"
+		 * ); webDriver = new ChromeDriver();
+		 * 
+		 * } else if (data.browser == "Firefox") {
+		 * System.out.println("Selected Firefox Browser...");
+		 * System.setProperty("webdriver.gecko.driver", data.firefoxDriverLocation);
+		 * webDriver = new FirefoxDriver();
+		 * 
+		 * } else if (data.browser == "Edge") {
+		 * System.out.println("Selected Edge Browser...");
+		 * System.setProperty("webdriver.edge.driver", data.edgeDriverLocation);
+		 * webDriver = new EdgeDriver(); }
+		 * System.out.println("successful browser declaration"); } catch (Exception e) {
+		 * e.printStackTrace();
+		 * 
+		 * }
+		 */
 
 		try {
 
@@ -73,7 +104,6 @@ public class BaseTest {
 	 * @BeforeTest public void beforeTest() {
 	 * System.out.println("-----Before Test-----"); }
 	 */
-	public int indexSI = 0;
 
 	/*
 	 * @AfterClass public void AfterClass() throws Exception {
@@ -97,7 +127,8 @@ public class BaseTest {
 		}
 		//emailTestReport();
 	}
-
+	
+	//For creation and update of TestReport.html
 	public void updateResult(String className, int index, String methodName, String testStatus) throws Exception {
 		LocalDateTime currentLocalDateTime = LocalDateTime.now();
 

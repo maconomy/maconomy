@@ -5,9 +5,10 @@
 		<listener class-name="webclient.utilities.TestReport"></listener>
 
 	</listeners>
-	<test name="Login">
+	<test name="Sanity">
 		<classes>
 			<class name="webclient.Tests.LoginTest" />
+			<class name="webclient.Tests.SettingsTest" />
 		</classes>
 	</test>
 

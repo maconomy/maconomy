@@ -7,12 +7,14 @@ import org.testng.annotations.Test;
 
 import webclient.Pages.LoginPage;
 import webclient.Pages.MainPage;
+import webclient.utilities.Data;
 
 public class LoginTest extends BaseTest {
 
+	Data data = new Data();
+	
 	@Test(priority = 2)
 	public void successfulLogin() throws Exception {
-		fail();
 		LoginPage loginPage = new LoginPage(webDriver);
 		MainPage mainPage = new MainPage(webDriver);
 		
@@ -25,19 +27,25 @@ public class LoginTest extends BaseTest {
 		}
 		mainPage.openMenu();
 		mainPage.closeMenu();
-		System.out.println("2nd successful run " + Thread.currentThread().getId());
+		successRun();
 	}
 	
 	@Test(priority = 1)
 	public void verifyLoginPage() throws Exception {
-		fail();
 		System.out.println("Start verifying login page");
 		LoginPage loginPage = new LoginPage(webDriver);
 		
-		loginPage.verifyTextContains(loginPage.usernameLabel, "User");
-		System.out.println("1st successful run " + Thread.currentThread().getId());
+		loginPage.verifyTextContains(loginPage.usernameLabel, data.usernameLabel);
+		loginPage.verifyExists(loginPage.usernameTextBox);
+		loginPage.verifyTextContains(loginPage.passwordLabel, data.passwordLabel);
+		loginPage.verifyExists(loginPage.passwordTextBox);
+		loginPage.verifyExists(loginPage.loginButton);
+		successRun();
 	}
 	
-
+	//successful message
+	public void successRun() {
+		System.out.println("Successful run: " + Thread.currentThread().getStackTrace()[2].getMethodName());
+	}
 }
 
